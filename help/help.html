@@ -1,0 +1,832 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aspen Shortcodes and Widgets</title>
+<style type="text/css">
+body {
+	background: #eeeeee;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 10px; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	background-color: #ffd;
+}
+
+/* everything about each major block on the site - may be mods in some places */
+
+#container {
+	max-width:800px;
+	background-color: #00CC00;
+}
+#mainContent {
+	background-color: #ffc;
+}
+.oneColFixCtr #container {
+	max-width: 750px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	background: #FFFFCD;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 1px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+.oneColFixCtr #mainContent {
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	font-size:12px;
+}
+/* layouts for layout boxes */
+.layoutbox {
+	width:700px;
+	text-align:center;
+	margin:0 25px;
+}
+.l_layout {
+	display:block;
+	width:140px;
+	height:110px;
+	float:left;
+	margin-right:10px;
+	margin-bottom:10px;
+	display:inline;
+	border:1px solid #888;
+	color:black;
+	text-align:center;
+	font:15px arial, sans-serif;
+}
+.l_layout span {
+	display:block;
+}
+.l_header {
+	width:140px;
+	height:20px;
+	background:#CCF;
+	line-height:20px;
+}
+.l_content {
+	width:100px;
+	height:70px;
+	background:beige;
+	float:left;
+	display:inline;
+	line-height:70px;
+}
+.l_contentcenter {
+	width:60px;
+	height:70px;
+	background:beige;
+	float:left;
+	display:inline;
+	line-height:70px;
+}
+.l_content2 {
+	width:80px;
+	height:70px;
+	background:beige;
+	float:left;
+	display:inline;
+	line-height:70px;
+}
+.l_contentw {
+	width:140px;
+	height:70px;
+	background:beige;
+	float:left;
+	display:inline;
+	line-height:70px;
+}
+.l_stdbar {
+	width:40px;
+	height:70px;
+	float:left;
+	display:inline;
+}
+.l_widebar {
+	width:60px;
+	height:70px;
+	float:left;
+	display:inline;
+}
+.l_righttop {
+	width:40px;
+	height:20px;
+	background:#FE8;
+	float:left;
+	display:inline;
+	line-height:20px;
+}
+.l_righttopwide {
+	width:60px;
+	height:20px;
+	background:#FE8;
+	float:left;
+	display:inline;
+	line-height:20px;
+}
+.l_rightup {
+	width:40px;
+	height:25px;
+	margin:0;
+	background:#FAA;
+	float:left;
+	display:inline;
+	line-height:25px;
+}
+.l_rightright {
+	width:40px;
+	height:50px;
+	margin:0;
+	background:#FAA;
+	float:left;
+	display:inline;
+	line-height:50px;
+}
+.l_rightdown {
+	width:40px;
+	height:25px;
+	margin:0;
+	background:#AFA;
+	float:left;
+	display:inline;
+	line-height:25px;
+}
+.l_leftleft {
+	width:40px;
+	height:70px;
+	margin:0;
+	background:#AFA;
+	float:left;
+	display:inline;
+	line-height:70px;
+}
+.l_leftshort {
+	width:30px;
+	height:50px;
+	margin:0;
+	background:#AFA;
+	float:left;
+	display:inline;
+	line-height:50px;
+}
+.l_skinny {
+	width:30px;
+	height:50px;
+	margin:0;
+	background:#FAA;
+	float:left;
+	display:inline;
+	line-height:50px;
+}
+.l_footer {
+	clear:left;
+	width:140px;
+	height:20px;
+	background:#DDF;
+	color:#000;
+	line-height:20px;
+}
+h4 {
+	font-weight: bold;
+	font-style:italic;
+	color: #000066;
+	text-decoration: underline;
+}
+h3 {
+	font-size: medium;
+	font-weight: bold;
+	color: #000066;
+	text-decoration: underline;
+}
+h2 {
+	font-size: large;
+	font-weight: bold;
+	color: #000066;
+	text-decoration: underline;
+	margin-top: 40pt;
+}
+h1 {
+	font-size: x-large;
+	font-weight: bold;
+	color: #000066;
+	text-decoration: underline;
+}
+.codebox {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 10px;
+	font-style: normal;
+	background-color: #E8E8E8;
+	margin: 10px;
+	padding: 4px;
+	border: 1px solid #333333;
+	color: #000000;
+	width: 80%;
+}
+.attrs {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color:#000000;
+	text-decoration: none;
+}
+.css {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 9pt;
+	font-style: normal;
+}
+.box {
+	color: #000000;
+	text-decoration: none;
+	margin: 5px;
+	padding: 5px;
+	border: thin solid #000000;
+}
+.nospace {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.style3 {
+	font-family: "Courier New", Courier, monospace
+}
+.style4 {
+	font-family: monospace
+}
+.style6 {
+	color: #990000;
+	font-style: italic;
+}
+.style7 {
+	color: #CC3300;
+	font-weight: bold;
+}
+.code1 {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 14px;
+	font-style: italic;
+}
+.red-highlight {
+	color: #CC3300;
+}
+</style>
+</head>
+<body class="oneColFixCtr">
+<div id="container">
+  <div id="mainContent"> <a name="top" id="top"></a>
+    <h2><b>Aspen Shortcodes and Widgets Plugin Documentation -- Version 1.0</b></h2>
+    <h4>Table of Contents</h4>
+    <ul style="line-height:1.7em;">
+      <li><a href="#summary"><strong>Plugin Summary</strong></a></li>
+<li><strong><a href="#admin_page">Aspen Shortcodes Admin Page</a> </strong></li>
+<li><a href="#sc_summary"><strong>Shortcode Summary</strong></a></li>
+<ul>
+<li><a href="#slider"><strong>[aspen_slider] - Flexible, responsive slider</strong></a></li>
+<li><strong><a href="#showposts">[aspen_show_posts] Shortcode</a></strong></li>
+<li><a href="#tab_group"><strong>[aspen_tab_group] - content in tabs</strong></a></li>
+<li><strong><a href="#headerimage">[aspen_header_image] Shortcode</a></strong></li>
+<li><strong><a href="#schtml">[aspen_html]</a></strong></li>
+<li><strong><a href="#schtml">[div]text[/div]</a></strong></li>
+<li><strong><a href="#sciframe">iframe - [aspen_iframe]</a></strong></li>
+<li><strong><a href="#showhidemobile">[aspen_show_if_mobile] / [aspen_hide_if_mobile]</a></strong></li>
+<li><strong><a href="#showhideloggedin">[aspen_show_if_logged_in] / [aspen_hide_if_logged_in]</a></strong></li>
+<li><strong><a href="#sitetitlesc">[aspen_site_title], [aspen_site_desc]</a></strong></li>
+<li><strong><a href="#bloginfo">[aspen_bloginfo arg='name' style='your css']</a></strong></li>
+<li><strong><a href="#video">Video - [aspen_vimeo], [aspen_youtube]</a></strong></li>
+</ul>
+<li><a href="#widg-sum"><strong>Widget Summary</strong></a>
+  <ul>
+<li><strong><a href="#widg-login">Aspen Login Widget</a></strong></li>
+<li><strong><a href="#widg_pp_text">Aspen Per Page Text</a></strong></li>
+<li><strong><a href="#widg_text_2">Aspen Text 2</a></strong></li>
+  </ul>
+</li>
+    </ul>
+    <h3><a name="summary" id="summary"></a>Plugin Summary </h3>
+    <p>The Aspen Shortcodes and Widgets Plugin provides a collection of shortcodes to allow you to easily add extra content and features to your regular content. These shortcodes will work with almost any WordPress theme. Some of the shortcodes (e.g., [aspen_show_posts]) have some optimizations to work with the Aspen Theme and the Aspen S&amp;W theme.</p>
+<p>While these shortcodes should prove useful with most any theme, one of the goals of these shortcodes is to provide an alternative to users of the Aspen S&amp;W theme. This plugin supports most Weaver II shortcodes (but not Weaver II Pro shortcodes), allowing for a smooth transition from Weaver II to other themes.</p>
+<h4>Importat Note about Shortcode Names</h4>
+<p>In this documentation, all the shortcodes are described using the [aspen_xxxx] name of the shortcode. Using the [aspen_] prefix will help to be sure there are no conflicts with other, similar shortcodes. If you wish, you can check the &quot;Use generic names&quot; option on the OPTIONS tab, and all the shortcodes will respond to just the main part of the name - [show_posts] instead of [aspen_show_posts].</p>
+<p>And for Weaver II compatibilitty, all the shortcodes have an equivalent [weaver_xxx] form.</p>
+<h2><a name="admin_page" id="admin_page"></a>Aspen Shortcodes Admin Page</h2>
+<p>This plugin has just a few options, all found on the Aspen Shortcodes admin page under the WordPress dashboard Appearance section.</p>
+<h3>OPTIONS - general options</h3>
+<ul>
+  <li><strong>Generic Shortcode Names</strong> - Enable &quot;generic&quot; shortcode names - e.g., [slider] instead of [aspen_slider]. Note that the generic names are more likely to conflict with other plugins.</li>
+</ul>
+<h3>Slider - options for the Slider</h3>
+<ul>
+  <li><strong>Support Videos in Sliders</strong> - Enable videos in sliders. Will use an additional script to make videos fit the slider, and responsively resize. This auto-resize script will apply to all videos on pages with sliders. You will get best results using the embed code provided by the video host (e.g., YouTube, Vimeo). If you use [aspen_youtube] or [aspen_vimeo], you must specify a width (e.g., w=940) to allow this feature to work. <strong>IMPORTANT:</strong> Be sure to specify &quot;video=true&quot; for the [aspen_slider] shortcode. If you have checked <em>Use FitVids Script for Videos</em> on the Videos tab, then you do not need to add &quot;video=true&quot; to [aspen_slider].</li>
+  <li><strong>Use Alternate Easing Animation</strong> - If you use the useCSS=false option, you need to check this option to load the proper easing animation script. See the bxSlider website for details.</li>
+</ul>
+<h3>Video - options for Videos</h3>
+<ul>
+  <li> <strong>Use FitVids Script for Videos</strong> - Use alternative &quot;FitVids&quot; script for responsive display of <strong>all</strong> videos. This script will work for any YouTube or Vimeo video - even if not specified by this shortcode. If checked, [aspen_youtube] and [aspen_vimeo] will automatically use a &quot;w=nnn&quot; option, and ignore the &quot;percent&quot; option. Note: if you use [aspen_youtube] and [aspen_vimeo] for all your videos, then you will have better appearance if you do <strong>not</strong> check this option.</li>
+</ul>
+<h2><a name="sc_summary" id="sc_summary"></a>Shortcode Summary</h2>
+<h3><a name="slider" id="slider"></a>[aspen_slider] - Flexible, responsive slider</h3>
+<p>The Aspen [aspen_slider] shortcode is based on the <a href="http://bxslider.com" target="_blank">bxSlider jQuery</a> slider script. This elegant and powerful tool allows you to generate sliders of almost any size, with any content - images, videos, even arbitrary HTML. While it is easy to use the associated Aspen S&amp;W shortcodes, you can also use native HTML as shown in the examples on the bxSlider site.</p>
+<p>Aspen Slider Shortcodes</p>
+<p>The plugin provides several shortcodes to enable you to build a slider:</p>
+<ul>
+  <li><strong>[aspen_slider id=slider-id noborder=false  css=&quot;css&quot;  style=css-style bxSlider-Options...]</strong>slides<strong>[/aspen_slider]</strong><br />
+    <br />
+  This creates each slider set you define. The <em>id</em> is used to define an <em>id</em> for the slider. If not supplied, one will be generated. If you use this slider with a slider pager, you must then specify both the <em>id</em> and the corresponding <em>pagerCustom</em> value.<br />
+  <br />
+  If you add <em>noborder=true</em>, then the slider will not have a border.<br />
+    <br />
+    The <em>css</em> option lets you specify css for this slider. This must be complete CSS rules (e.g., <em>css=&quot;#myslider {margin-left:20px!;}&quot;</em>), and will require knowledge of the classes and divs of the generated slider. Each slider is also wrapped with the <em>.atw-slider</em> class. Any CSS provide will be added as an internal &lt;style&gt;css rules&lt;/style&gt; block. This is an advanced option, and is not commonly needed. It is most useful to override the default bxSlider theme CSS.<br />
+  <br />
+    The <em>style</em> option lets you specify inline CSS style rules. These will be added to a div that wraps the entire slider:
+    <code>&lt;div style=&quot;your-css-style&quot;&gt;&lt;ul id=&quot;slider-id&quot;&gt;slides...&lt;/ul&gt;&lt;/div&gt;</code>. This could be used to add padding around the entire slider, for example.<br />
+    <br />
+    The bxSlider-Options can be any of the supported bxSlider options, described below, and on the bxSlider <a href="http://bxslider.com/options" target="_blank">Options</a> page.<br />
+    <br />
+    Between the open and close aspen_slider tags, you define the separate slides, usually with the <strong>[aspen_slide]</strong> shortcode.<br />
+    <br />
+    You can also define an associated pager using the <strong>[aspen_slider_pager]</strong> shortcode.<br />
+    <br />
+    Technical note: The [aspen_slider] shortcode first generates the appropriate jQuery script used to interface with the jQuery based bxSlider library. It then wraps all the slides inside a &lt;ul&gt;...&lt;/ul&gt; pair, just like the examples on the bxSlider website. Using [aspen_slider] also causes the bxSlider to be loaded at the appropriate place on the page. Using [aspen_slide], [aspen_slider_pager], and [aspen_pager_index] all generate the equivalent HTML code found in the bxSlider examples. The [aspen_slider_options] can be used to in conjunction with regular HTML code to generate the corresponding jQuery bxSlider script.<br />
+    <br />
+  </li>
+  <li><strong>[aspen_slide]</strong>slide html definition<strong>[/aspen_slide]</strong><br />
+    <br />
+    This is used to define the contents of the slider. You can specify any HTML you need here. All slides of a single slider are defined between the opening [aspen_slider] and closing [/aspen_slider].<br />
+    <br />
+    For images, you will need to specify <em>&lt;img href=&quot;full-url-to-image&quot; /&gt;</em>. The slider will size based on the largest sized slide. If you want a slider with everything filled in, you should make sure all the images are the same size. They will then be responsively displayed depending on the screen size.<br />
+    <br />
+    You can use any arbitrary HTML, including text. One possibility is to use the [aspen_show_posts] code to build a slider of recent posts.<br />
+    <br />
+    This shortcode wraps the slide with &lt;li&gt; and &lt;/li&gt;, just like the the bxSlider example.<br />
+    <br />
+  </li>
+  <li><strong>[aspen_slider_pager  id=slider-id pagerCustom=pager-id]</strong>index-thumbs<strong>[/aspen_slider_pager]</strong><br />
+    <br />
+    This is used to define a pager associated with a slider. It should be placed immediately after the corresponding slider is defined. You must specify both the <em>id</em> of the associated slider, and give an id for this pager in the <em>pagerCustom</em> field, including the leading #. You also need to provide the <em>pagerCustom</em> id in the corresponding [aspen_slider] shortcode.<br />
+    <br />
+  </li>
+  <li><strong>[aspen_pager_index]</strong>index-thumbnail<strong>[/aspen_pager_index]<br />
+    </strong><br />
+    Define the corresponding index thumbnail (or simple text) associated with each slider. These must correspond to the exact order of the associated slider.<br />
+    <br />
+This shortcode generates the appropriate &lt;a&gt; link code as required by bxSlider.<br />
+<br />
+  </li>
+  <li><strong>[aspen_slider_options id=slider-id css=&quot;css&quot; bxSlider-Options...]</strong><br />
+    <br />
+  The purpose of this shortcode is to allow you to define your sliders using standard html &lt;ul&gt; and &lt;li&gt; groups as found in all the bxSlider examples. Add the <em>id</em> provided with this shortcode to  the &lt;ul&gt; around the slider (e.g., &lt;ul id=&quot;slider-id&quot;&gt; ... &lt;li&gt;slide...&lt;/li&gt;&lt;/ul&gt;) definitions. This shortcode will generate the appropriate jQuery bxSlider code, and load the bxSlider script. The <em>css</em> option is the same as described for [aspen_slider].</li>
+
+</ul>
+
+<h4>Examples</h4>
+<p><strong>Basic Example</strong></p>
+<p>This example uses the header images included with the Apsen theme. (If you are using aspen, you can copy/paste the example to see a working slider.)<br />
+</p>
+
+<pre>
+[aspen_slider id=bxslider]
+    [aspen_slide]&lt;img alt="" src="/wp-content/themes/aspen/images/headers/maroon-bells.jpg" />
+    [/aspen_slide]
+    [aspen_slide]&lt;img alt="" src="/wp-content/themes/aspen/images/headers/mountain-stream.jpg" />
+    [/aspen_slide]
+    [aspen_slide]&lt;img alt="" src="/wp-content/themes/aspen/images/headers/mum.jpg" />[/aspen_slide]
+    [aspen_slide]&lt;img alt="" src="/wp-content/themes/aspen/images/headers/sopris.jpg" />[/aspen_slide]
+[/aspen_slider]
+</pre>
+<p><strong>Pager Example</strong>
+</p>
+<pre>
+[aspen_slider id=bxslider-pg pagerCustom=#pager]
+    [aspen_slide]&lt;img alt=""
+      src="/wp-content/themes/aspen/images/headers/maroon-bells.jpg" />[/aspen_slide]
+    [aspen_slide]&lt;img alt=""
+      src="/wp-content/themes/aspen/images/headers/mountain-stream.jpg" />[/aspen_slide]
+    [aspen_slide]&lt;img alt=""
+      src="/wp-content/themes/aspen/images/headers/mum.jpg" />[/aspen_slide]
+    [aspen_slide]&lt;img alt=""
+      src="/wp-content/themes/aspen/images/headers/sopris.jpg" />[/aspen_slide]
+[/aspen_slider][aspen_slider_pager id=bxslider-pg pagerCustom=#pager]
+    [aspen_slider_index]&lt;img alt=&quot;&quot;
+      src=&quot;/wp-content/themes/aspen/images/headers/maroon-bells-thumbnail.jpg&quot; /&gt;[/aspen_slider_index]
+    [aspen_slider_index]&lt;img alt=&quot;&quot;
+      src=&quot;/wp-content/themes/aspen/images/headers/mountain-stream-thumbnail.jpg&quot; /&gt;[/aspen_slider_index]
+    [aspen_slider_index]&lt;img alt=&quot;&quot;
+      src=&quot;/wp-content/themes/aspen/images/headers/mum-thumbnail.jpg&quot; /&gt;[/aspen_slider_index]
+    [aspen_slider_index]&lt;img alt=&quot;&quot;
+       src=&quot;/wp-content/themes/aspen/images/headers/sopris-thumbnail.jpg&quot; /&gt;[/aspen_slider_index]
+[/aspen_slider_pager]
+</pre>
+<p><strong>Eliminate Pager Dots</strong></p>
+<p>You can eliminate the row of pager dots below the slider by adding <em>pager=false</em> to the parameter list on [aspen_slider] or [aspen_slider_options].</p>
+<p><strong>Eliminate Previous and Next buttons</strong></p>
+<p>You can eliminate the left and right arrow buttons on a slider by adding nextSelector=#none1 and nextSelector=#none2 to the parameter list on [aspen_slider] or [aspen_slider_options]. There are other things you can do with the previous and next links described on the bxSlider site.</p>
+<p><strong>Example using [aspen_slider_options] and HTML</strong></p>
+<p>You can use straight HTML for your sliders as used in the examples on the bxSlider site by using the [aspen_slider_options] shortcode to setup the required jQuery bxSlider scripts. The above simple example can equivalently be generated like this:</p>
+<pre>[aspen_slider_options id=bxslider css=&quot;#bxslider{margin:0;}&quot;]
+&lt;ul id=&quot;bxslider&quot;&gt;
+    &lt;li&gt;&lt;img alt=&quot;&quot; src=&quot;/wp-content/themes/aspen/images/headers/maroon-bells.jpg&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img alt=&quot;&quot; src=&quot;/wp-content/themes/aspen/images/headers/mountain-stream.jpg&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img alt=&quot;&quot; src=&quot;/wp-content/themes/aspen/images/headers/mum.jpg&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img alt=&quot;&quot; src=&quot;/wp-content/themes/aspen/images/headers/sopris.jpg&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+<p>Note: because of a quirk with WP site structure, you need to add the <em>css=&quot;#bxslider{margin:0;}&quot;</em>
+  as an option with many themes.</p>
+<p><strong>Example full width Header slideshow with auto play</strong></p>
+<p>In Aspen and Weaver II, you can make a slideshow in the Header area by adding an [aspen_slider] shortcode to the Site Header Insert Code or Pre-Header code areas. (Other themes may allow you to add shortcode to the header area, but it is uncommon.) This is an example of just the opening [aspen_slider] to do that:</p>
+<p><code>[aspen_slider id=headerslider  noborder=true pager=false nextSelector='#none1' prevSelector='#none2' mode=fade  auto=true randomStart=true]</code></p>
+<h4>bxSlider Options</h4>
+<p>The following options are supported as paramaters to [aspen_slider] and [aspen_slider_options]. They
+are more completely described at <a href="http://bxslider.com" target="_blank">bxSlider.com</a>.</p>
+<p>Technical note: To use any of these options, add them to either the [aspen_slider] or [aspen_slider_options] shortcodes. They will be then used to generate the appropriate $('#slider-id').bxSlider({options:value}); code used to invoke the bxSlider script for each slider. When used with the [aspen_slider] shortcode, you should use the corresponding [aspen_slide] shortcodes. If used with the [aspen_slider_options] shortcode, you can then use the &lt;ul&gt; and &lt;li&gt; slider code as found in the bxSlider <a href="http://bxslider.com/examples" target="_blank">examples</a>.</p>
+
+<strong>GENERAL</strong>
+<br />
+<ul>
+<li><strong>mode</strong> - horizontal, vertical, or fade (default: horizontal)</li>
+<li><strong>speed</strong> - slide transition duration (ms) (default: 500)</li>
+<li><strong>slideMargin</strong> - Margin between each slide   (default: 0)</li>
+<li><strong>startSlide</strong> - Starting slide index (zero-based, default: 0)</li>
+
+<li><strong>randomStart</strong> - Start slider on a random slide (true/false) (default: false)</li>
+<li><strong>infiniteLoop</strong> - If true, clicking "Next" while on the last slide will transition to the first
+   slide and vice-versa (default: true)</li>
+<li><strong>hideControlOnEnd</strong> - If true, &quot;Next&quot; control will be hidden on last slide and vice-versa. Note: Only used when infiniteLoop: false</li>
+<li>  <strong>easing</strong> - The type of &quot;easing&quot; to use during transitions. Options when useCSS=true: 'linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'cubic-bezier(n,n,n,n)' (default: linear) Options when useCSS=false: 'swing', 'linear' - see the bxSlider options page for more.</li>
+<li><strong>captions</strong> - Include image captions. Captions are derived from the image's title attribute
+   (true/false) (default: false)</li>
+<li><strong>ticker</strong> - Use slider in ticker mode (similar to a news ticker) (true/false) (default: false)</li>
+<li><strong>tickerHover</strong> - Ticker will pause when mouse hovers over slider. Note: this functionality does NOT work if using CSS transitions - set useCSS=false and check &quot;Use Alternate Easing Animation&quot; option on the Slider options admin page.</li>
+<li><strong>adaptiveHeight</strong> - Dynamically adjust slider height based on each slide's height (true/false) (default: false)</li>
+<li><strong>adaptiveHeightSpeed</strong> - Slide height transition duration (in ms). Note: only used if adaptiveHeight: true</li>
+<li><strong>video</strong> - If any slides contain video, set this to true.  (true/false) (default: false)
+     See http://fitvidsjs.com/ for more info</li>
+<li><strong>useCSS</strong> - If true, CSS transitions will be used for horizontal and vertical slide animations (this uses native hardware acceleration). If false, jQuery animate() will be used. Note: you must also check the &quot;Use Alternate Easing Animation&quot; option on the Slider options admin page.</li>
+<li><strong>preloadImages</strong> - If 'all', preloads all images before starting the slider. If 'visible',
+           preloads only images in the initially visible slides before starting the
+           slider (tip: use 'visible' if all slides are identical dimensions) (default: visible)</li>
+</ul>
+
+<strong>PAGER</strong>
+<br />
+<ul>
+
+<li><strong>pager</strong> - If true, a pager will be added  (true/false)</li>
+<li><strong>pagerCustom</strong> - ID of associated pager - include leading #, MUST be in both slider and pager</li>
+<li><strong>pagerType</strong> - If 'full', a pager link will be generated for each slide.</li>
+       If 'short', a x / y pager will be used (ex. 1 / 5) (default: full)</li>
+<li><strong>pagerShortSeparator</strong> - If pagerType: 'short', pager will use this value as the separating character (default: ' / ')</li>
+
+</ul>
+
+<strong>CONTROLS</strong>
+<br />
+<ul>
+
+<li><strong>controls</strong> - If true, "Next" / "Prev" controls will be added  (true/false) (default: true)</li>
+<li><strong>nextSelector</strong> - next selector id</li>
+<li><strong>prevSelector</strong> - prev selector id</li>
+<li><strong>nextText</strong> - Text to be used for the "Next" control (default: 'Next')</li>
+<li><strong>prevText</strong> - Text to be used for the "Prev" control (default: 'Prev')</li>
+<li><strong>autoControls</strong> - If true, "Start" / "Stop" controls will be added  (true/false) (default: false)</li>
+<li><strong>startText</strong> - Text to be used for the "Start" control (default: 'Start')</li>
+<li><strong>stopText</strong> - Text to be used for the "Stop" control (default: 'Stop')</li>
+<li><strong>autoControlsCombine</strong> - When slideshow is playing only "Stop" control is displayed and
+         vice-versa  (true/false) (default: false)</li>
+
+</ul>
+
+<strong>AUTO</strong>
+<br />
+<ul>
+
+<li><strong>auto</strong> - Slides will automatically transition  (true/false) (default: false)</li>
+<li><strong>pause</strong> - The amount of time (in ms) between each auto transition (default: 4000)</li>
+<li><strong>autoStart</strong> - Auto show starts playing on load. If false, slideshow will start when the "Start" control is clicked  (true/false) (default: true)</li>
+<li><strong>autoDirection</strong> - The direction of auto show slide transitions ('next' or 'prev') (default : 'next')</li>
+<li><strong>autoHover</strong> - Auto show will pause when mouse hovers over slider (true/false) (default: false)</li>
+<li><strong>autoDelay</strong> - Time (in ms) auto show should wait before starting (default: 0)</li>
+
+</ul>
+
+<strong>CAROUSEL</strong>
+<br />
+<ul>
+
+<li><strong>minSlides</strong> - The minimum number of slides to be shown. Slides will be sized down if carousel
+    becomes smaller than the original size. (default: 1)</li>
+<li><strong>maxSlides</strong> - The maximum number of slides to be shown. Slides will be sized up if carousel
+    becomes larger than the original size. (default: 1)</li>
+<li><strong>moveSlides</strong> - The number of slides to move on transition. This value must be >= minSlides,
+    and <= maxSlides. If zero (default), the number of fully-visible slides will be used. (default: 0)</li>
+<li><strong>slideWidth</strong> - The width of each slide. This setting is required for all horizontal carousels!
+    (default: 0, recommended: 940)</li>
+</ul>
+
+
+
+<h3><a name="showposts" id="showposts"></a><strong>[aspen_show_posts] Shortcode</strong> </h3>
+    <p> The [aspen_show_posts] is a very powerful tool for displaying posts from within your pages or from a text widget. Among other possibilities, it can be used to get a magazine style layout on your pages. This shortcode is intended to display a relatively small number of selected posts. It does not split posts into multiple pages like a blog page does. If you need selective display of many posts, the Page with Post page template is the better choice.</p>
+    <p>Which posts are displayed are controlled by the filtering options provided as parameters of the shortcode. Below is a summary of all parameters, shown with default values. You don't need to supply every
+      option when you add the [aspen_show_posts] to your own content. There may seem to be an overwhelming set of options for this shortcode, but it gives you many options for displaying specific posts within a static page.</p>
+    <p>The default global settings for various post display options will be used unless overridden with a value in the shortcode. If there are more posts than 'number' that match the filter, only the first 'number' posts will be displayed. For example, if you had a &quot;news&quot; category, you could set cats=&quot;news&quot; and number=&quot;1&quot; and display just the most recent news post.</p>
+    <h4>Summary</h4>
+    <p class="style4">[aspen_show_posts cats="" tags="" author="" author_id="" single_post="" post_type= "" orderby="date" sort="DESC" number="5" show="full" hide_title=""
+      hide_top_info="" hide_bottom_info="" show_featured_image="" hide_featured_image="" show_avatar="" show_bio="" excerpt_length="" style=""
+      class="" header="" header_style="" header_class="" more_msg=&quot;&quot; left=0 right=0 clear=0] </p>
+    <p>You can enclose the option values in either double or single quotation marks. If there is just one value, you don't need any quotation marks. If you don't include an option, the default value will be used. For most option, the default value is an empty string, which means that option won't be used to filter for posts, or that the global formatting from the Main Options settings will be used.</p>
+    <p><span class="style6">Important Note:</span> [aspen_show_posts] will work on pages, widget areas, and even from within most posts. The only thing you need to be careful about when using this in a post is to avoid including the current post in posts that would be displayed by the shortcode. For example, don't use the shortcode inside a post that is in &quot;Category A&quot; to display other posts from &quot;Category A&quot;. This creates an endless nesting situation (technically, called infinite recursion) that will likely fail with the &quot;white screen of death&quot;. But don't worry - that can't happen from regular pages and widget areas, and not from most posts, either. But you can't use it within a post to show &quot;similar&quot; posts from the same category, for example.</p>
+    <h4>Filtering Options</h4>
+    <p>These options are used to filter or select which set of posts are displayed. Default value in {}'s.</p>
+    <ul>
+      <li><em>cats</em> - Select posts from a comma separated list of category slugs. Add minus (-) to front of slug to exclude posts from that category. </li>
+      <li><em>tags</em> - Select posts from a comma separated list of tag slugs.</li>
+      <li><em>author</em> - Display posts from a single author. Use the author <em>Username</em>, including any spaces.</li>
+      <li><em>author_id</em> - Display posts from a list of author ids. Use a comma separated list of author ids. Negative value (e.g., -3) will exclude that author. One way to get the
+      author id is to Edit the author/user from the All Users page, and the id will show as user_id=123 in the address bar. There are plugins for this as well.</li>
+      <li><em>single_post</em> - Display single post. Specify slug of post name.</li>
+      <li><em>post_type</em> - Display entries from a single specified custom post type. You will need a separate plugin
+      (e.g., Types - Complete Solution for Custom Fields and Types) to create custom post type content.</li>
+      <li><em>orderby</em> - Sort order used to display posts. Possible values: <span class="style4">author</span> | <span class="style4">date</span> | <span class="style4">title</span> | <span class="style4">rand</span> | <span class="style4">parent</span> {<span class="style4">date</span>}</li>
+      <li><em>sort</em> -  Sort order. Possible values: <span class="style4">ASC</span> | <span class="style4">DESC</span> {<span class="style4">DESC</span>}</li>
+      <li><em>number</em> - The number of posts to show  {5}. Note that if there are more posts that match the filter you've created, only this number of post will be displayed, and there will be no &quot;Previous&quot; or &quot;Next&quot; link as found on you full blog page unless you also specify 'paged=true'. If you specify 'number=-1', then all posts will be displayed. Note that showing all posts will not automatically page the posts, and this could potentially generate a HUGE page, perhaps even testing the page length limits of a browser.</li>
+      <li><em>paged</em> - If you specify 'paged=true', then 'number' will be used to control how many posts are displayed, and posts
+      will be displayed in paged mode with "previous" and "next", or a numbered paging control displayed. <em>Limitation:</em> paged works correctly only if you have just one instance of the
+      shortcode on the page. It is also likely there will be unexpected results if you include 'paged' on posts or sidebars.</li>
+      <li><em>nth</em> - Show just the nth post. Why use this? Say you had a slider that can show regular HTML as a slide. You might want to define the first slide as [weaver_show_posts nth=1], the second as [weaver_show_posts nth=2], and so on. Then say you put 5 posts in the slider. (All defined in a Page with Posts). Then you can specify 5 for "Hide first n posts" for in the Page with Posts per page option. So you have the first 5 posts in a slider, while the remainder show normally on the Page with Posts.</li>
+    </ul>
+    <h4>Formatting Options</h4>
+    These options control how posts displayed by [aspen_show_posts] are formatted, and which parts of a post are displayed. These options will override any other settings for posts. If you don't set a particular option, then the formatting will be controlled first by any per post settings, then by any options specified in the Main Options admin tab.
+    <ul>
+      <li><em>show</em> - Display posts by title, excerpt, full post, title plus featured image, or a list of title links. The titlelist option will produce a simple unorderlist (&lt;ul&gt;) of just the titles (as links) - useful for generating a table of contents. Possible values: <span class="style4">title</span> | <span class="style4">excerpt | full | titlelist | title_featured</span> </li>
+      <li><em>hide_title</em> - Use value of 1 to hide the post title</li>
+      <li><em>hide_top_info</em> - Hide the top info line (Posted on, by).</li>
+      <li><em>hide_bottom_info</em> -  Hide bottom info line (Category, tags, comment link)</li>
+      <li><em>show_featured_image</em> -  Force showing post associated featured image.</li>
+      <li><em>show_avatar</em> - Show the author avatar if defined.</li>
+      <li><em>show_bio</em> -Show the author bio below posts.</li>
+      <li><em>excerpt_length</em> - Override excerpt length. </li>
+      <li><em>style</em> - Inline CSS style for <span class="style4">.atw-show-posts</span> class. Provide just the rules that would go inside the quotation marks for a standard HTML <span class="style4">'style='</span> tag (e.g. the option could look like <span class="style4">style='border: 1px solid blue;' </span>which would generate <span class="style4">&lt;div class=&quot;atw-show-posts&quot; style=&quot;border: 1px solid blue;&quot;&gt;</span>, which would enclose the list of posts in a solid blue border). The point of these style and class options is to allow you to place as many post list on a single static page as you want, each with a different style if needed. This would be great for a Magazine style layout.</li>
+      <li><em>class</em> - Optional class to allow external styling. Adds an additional class name to the <span class="style4">.atw-show-posts</span> div, which you could add to the <em>&lt;HEAD&gt; Section</em> option.</li>
+      <li><em>header</em> - Optional header for post. This text will be placed in a &lt;div&gt; above the posts. You could use it to add a &quot;Most Recent News&quot; header for a list of recent new posts, for example.</li>
+      <li><em>header_style</em> - Optional inline style for header. Applies just to the <em>header</em> text.</li>
+      <li><em>header_class</em> - Add a class for the header.</li>
+      <li><em>more_msg</em> - Use this text to replace the standard <em>Continue Reading &rarr;</em> message for excerpts.</li>
+      <li>left, right, clear - These are used if you want to display the posts in two even columns. You would use at least two [aspen_show_posts] shortcodes. If you specify &quot;left=1&quot;, then the posts will be displayed in the left column. If you specify &quot;right=1&quot;, then the posts will be displayed in the right column. You can alternate as many instances of the shortcode as you like. However, you also <em>must</em> include &quot;clear=1&quot; in the last shortcode to clear the HTML column information. Otherwise, any content you include after the shortcodes may not display correctly.</li>
+    </ul>
+    <h4>Using in a Sidebar</h4>
+    This shortcode has been designed to use in a sidebar using the standard Text widget. There is special CSS styling that reduces the margins on the featured image thumbnail. If you provide the posts you want to show in the sidebar a featured image, you can get quite attractive post excerpts in the sidebar. For example, putting this in a text widget in one of your sidebars:
+    <pre>[aspen_show_posts cats='new' show_featured_image='1' show='excerpt' excerpt_length='25' number='2']</pre>
+    <p>will display the latest two posts from the 'news' category. The featured image will be shown in the upper left corner.</p>
+    <h4>CSS styling</h4>
+    <p> The group of posts will be wrapped with a &lt;div&gt;  with called .atw-show-posts.  You can add a class to that by providing a 'class=classname' option, where you use the name with a period in the CSS in the &lt;HEAD&gt; Section, but just the classname for the [aspen_show_posts] option.</p>
+    <p>You can also provide inline styling by providing a 'style=value' option where value is whatever styling you need, each terminated with a semi-colon (;).</p>
+    <p>These CSS rules are pre-defined, but can be overridden using the &lt;HEAD&gt; Section of the Advanced Options tab in Aspen and Weaver II themes, or by a custom CSS plugin such as found in JetPack. The element you're most likely to want to change is the margin-bottom. That determines how much space is added after each post.</p>
+    <pre>.atw-show-posts .hentry {
+    margin-top: 0px; margin-right: 0px; margin-bottom: 4px; margin-left: 0px;
+}
+.widget-area .atw-show-posts .hentry {
+    margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;
+}
+.widget-area .atw-show-posts .hentry {
+    margin-bottom: 0px;
+}
+.widget-area .atw-show-posts .attachment-thumbnail {
+    float: left; margin-right: 2px; margin-bottom: 0px; padding: 2px;
+}
+</pre>
+<h4>Example of Two Columns</h4>
+<p>
+This example demonstrates how to add two columns of posts on a page. This example will display the first 5 posts in the left column, and the last 5 posts in the right column.
+</p>
+<pre>
+[aspen_show_posts sort="DESC" number="5" left=1]
+[aspen_show_posts sort="ASC" number="5" right=1 clear=1]
+</pre>
+
+<h3><a name="tab_group" id="tab_group"></a>[aspen_tab_group] - content in tabs </h3>
+<span style="font-style:italic;margin-left:2em;">Alternative names:</span> <code>[weaver_tab_group], [tab_group]</code>
+<br />
+<p>Show content displayed on tabbed pages.</p>
+<p><strong>Shortcode usage:</strong><br />
+<pre>
+[aspen_tab_group border_color=black page_min_height=200px]
+    [aspen_tab title='tab one']This is the content found on first tab.[/aspen_tab]
+    [aspen_tab title='tab two']And we have more content for the second tab.[/aspen_tab]
+    [aspen_tab title='last tab']And this is the last tab. There could be more.[/aspen_tab]
+[/aspen_tab_group]
+</pre>
+</p>
+<p>
+<h4>Short code parameters</h4>
+You can supply values for these parameters to control the look of the tabbed section.
+<br />
+<ul>
+    <li><b>border_color:</b> tab and pane border color - default #888</li>
+    <li><b>tab_bg</b>: normal bg color of tab (default #CCC)</li>
+    <li><b>tab_selected_color</b>: color of tab when selected (default #EEE)</li>
+    <li><b>pane_min_height</b>: min height of a pane to help make all even if needed</li>
+    <li><b>pane_bg</b>: bg color of pane</li>
+</ul>
+</p>
+<h3><a name="headerimage" id="headerimage"></a><strong>[aspen_header_image] Shortcode</strong></h3>
+<p>The <code>[aspen_header_image]</code> shortcode allows you display the current header image wherever you want.
+  For example, you can get the header image into the Header Widget Area by using this shortcode in a text widget.
+  The current standard or mobile header image will be displayed. Only the <code>&lt;img ... &gt;</code> is displayed --
+  the image will not be wrapped in a link to the site.</p>
+
+<p><strong>Shortcode usage:</strong> <code>[aspen_header_image h='size' w='size' style='inline-style']</code>
+<br />
+<ol>
+    <li><strong>w='size' h='size'</strong> - By default, no height or image properties are included with the
+    header <code>&lt;img ... &gt;</code>, which will result in an image scaled to fit into whatever the natural
+    width of the enclosing HTML container is (the content area, a text widget, etc.). You may specify an explicit
+    value (usually in px) for the height and width of the image.
+    </li>
+    <li><strong>style='inline-style-rules'</strong> - Allows you to add inline style to wrap output of the shortcode.
+    Don't include the 'style=' or wrapping quotation marks. Do include a ';' at the end of each rule. The output will look like
+    <code>style="your-rules;"</code> - using double quotation marks.
+</li>
+</ol>
+<h3><a name="schtml" id="schtml"></a><strong>[aspen_html]</strong></h3>
+
+<p>The Aspen S&amp;W <code>[aspen_html]</code> shortcode allows you to add arbitrary HTML to your post and page content. The
+main purpose of this shortcode is to get around the auto paragraph and line break and other HTML stripping functionality
+of the WordPress editor.</p>
+
+<p><strong>Shortcode usage:</strong> <code>[aspen_html html-tag args='parameters']</code>
+<br />
+<ol>
+    <li><strong>html-tag</strong> - The first parameter to the shortcode must be present, and must be a standard
+    HTML tag - <code>p</code>, <code>br</code>, or <code>span</code>, for example. You just supply the tag - no quotation
+    marks, no '=', just the tag. The shortcode provides the &lt; and &gt;. If you need a wrapping HTML tag (e.g., <code>span</code> and <code>/span</code>), use
+    two shortcodes:<br />
+    <code>[aspen_html span args='style="color:red"']content to make red[aspen_html /span]</code>
+    </li>
+    <li><strong>args='parameters'</strong> - Allows you to specify arbitrary parameters for your HTML tag. See the example above.
+    </li>
+</ol>
+</p>
+
+<h3><a name="schtml" id="scdiv"></a><strong>[div]text[/div]</strong></h3>
+
+<p>The Aspen S&amp;W <code>[div]</code> shortcode allows easily add HTML &lt;div&gt; tags to your post and page content. The
+main purpose of this shortcode is to get around need to switch to the HTML editor view when you need to
+wrap your content in a &lt;div&gt;.</p>
+<p>
+	This will work exactly like a standard HMTL &lt;div&gt; tag. It supports 'id', 'class',
+    and 'style' parameters, which are the most useful. Instead of wrapping your text in &lt;div&gt; tags, wrap them like
+    this (the Visual view will work just fine):<br />
+    <code>[div style="font-size:20px;']This content will be large.[/div]</code>
+</p>
+
+<p><strong>Shortcode usage:</strong> <code>[div id='class_id' class='class_name' style='style_values']text[/div]</code>
+<br />
+<ol>
+    <li><strong>id='class_id' class='class_name' style='style_values'</strong> - Allows you to specify id, class, and style for the &lt;div&gt;. See the example above.
+    </li>
+</ol>
+</p>
+
+<h3><a name="sciframe" id="sciframe"></a><strong>iframe - [aspen_iframe]</strong></h3>
+
+<p>The <code>[aspen_iframe]</code> shortcode allows you easily display the content of an external site. You simply have to specify
+the URL for the external site, and optionally a height. This shortcode automatically generates the correct HTML &lt;iframe&gt; code.</p>
+
+<p><strong>Shortcode usage:</strong> <code>[aspen_iframe src='http://example.com' height=600 percent=100 style="style"]</code>
+<br />
+<ol>
+    <li><strong>src='http://example.com'</strong> - The standard URL for the external site.
+    </li>
+    <li><strong>height=600</strong> - Optional height to allocate for the site - in px. Default is 600.
+    </li>
+    <li><strong>percent=100</strong> - Optional width specification in per cent. Default is 100%.
+    </li>
+    <li><strong>style="style"</strong> - Optional style values. Added to &lt;iframe&gt; tag as style="values".
+    </li>
+</ol>
+</p>
+
+<h3><a name="showhidemobile" id="showhidemobile"></a><strong>[aspen_show_if_mobile] / [aspen_hide_if_mobile]</strong></h3>
+<p>The <code>[aspen_show_if_mobile]</code> and <code>[aspen_hide_if_mobile]</code>shortcodes allow you to selectively
+  display content depending if the visitor is using a standard browser or a mobile device browser. You might want
+  to disable a video on for mobile devices, for example.</p>
+
+<p><strong>Shortcode usage:</strong> <code>[aspen_show_if_mobile type='mobile']content to show[/aspen_show_if_mobile]</code>
+</p>
+<p>You bracket the content you want to selectively display with <code>[aspen_show_if_mobile] or [aspen_hide_if_mobile]</code> and closing
+<code>[/aspen_show_if_mobile]</code> or
+<code>[/aspen_hide_if_mobile]</code> tags. That content can contain other shortcodes as needed. </p>
+<p>
+The <code>type</code> argument can specify 'mobile' which includes all mobile devices (not tablets), 'touch' which includes
+touch sensitive mobile devices (e.g., small screen phones),'smalltablet' for small screen tablets (e.g. Kindle Fire), 'tablet' which includes only tablets such as the iPad,
+or 'any' which will include any mobile device. The default is 'mobile'.
+</p>
+
+<h3><a name="showhideloggedin" id="showhideloggedin"></a><strong>[aspen_show_if_logged_in] / [aspen_hide_if_logged_in]</strong></h3>
+
+<p>The <code>[aspen_show_if_logged_in]</code> and <code>[aspen_hide_if_logged_in]</code>shortcodes allow you to selectively
+display content depending if the visitor is logged in or not.</p>
+
+<p><strong>Shortcode usage:</strong> <code>[aspen_show_if_logged_in]content to show[/aspen_show_if_logged_in]</code>
+</p>
+<p>You bracket the content you want to selectively display with <code>[aspen_show_if_logged_in] or [aspen_hide_if_logged_in]</code> and closing tags <code>[/aspen_show_if_logged_in]</code> or
+<code>[/aspen_hide_if_logged_in]</code>. That content can contain other shortcodes as needed. </p>
+
+
+<h3><a name="sitetitlesc" id="sitetitlesc"></a><strong>[aspen_site_title], [aspen_site_desc]</strong></h3>
+
+<p>The <code>[aspen_site_title]</code> and <code>[aspen_site_desc]</code> shortcodes allow you display the current
+site title and site tagline. (The site tagline was formerly called the site description, thus the name of the shortcode.) This can be useful in a text widget in the Header Widget Area, for example.</p>
+<p><em>Note:</em> If you want to position the content of a text widget within the a cell of the Header Widget Area, you could use the following
+example:</p>
+    <p><code>[aspen_site_title style='font-size:150%;position:absolute;padding-left:20px;padding-top:30px;']</code></p>
+
+<p><strong>Shortcode usage:</strong> <code>[aspen_site_title style='inline-style'] [aspen_site_desc style='inline-style']</code>
+<br />
+<ol>
+    <li><strong>style='inline-style-rules'</strong> - Allows you to add inline style to wrap output of the shortcode.
+      Don't include the 'style=' or wrapping quotation marks. Do include a ';' at the end of each rule. The output will look like
+      <code>style="your-rules;"</code> - using double quotation marks.
+    </li>
+    </ol>
+
+<h3><a name="bloginfo" id="bloginfo"></a><strong>[aspen_bloginfo arg='name' style='your css']</strong></h3>
+
+<p>This shortcode can be used to access the WordPress function 'get_bloginfo($arg)'. This will return a number of useful
+strings depending on the value. All the supported values are listed at http://code.wordpress.org/Function_Reference/get_bloginfo.
+Some useful values include 'stylesheet_directory' and 'template_directory'. You can wrap the bloginfo output with css added to a &lt;span style=&quot;your css&quot;&gt;.
+</p>
+
+<h3><a name="video" id="video"></a><strong>Video - [aspen_vimeo], [aspen_youtube]</strong></h3>
+<p>Aspen S&amp;W supports specialized shortcodes to display video. While there are other ways to embed video, the Aspen S&amp;W versions have two important features. First, they will auto adjust to the width of your content, <em><strong>including</strong></em> the mobile view. Second, they use the latest iframe/HTML5 interface provided by YouTube and Vimeo.</p>
+<p><strong>Specifying Video Display Size for both shortcodes</strong></p>
+<p>Aspen S&amp;W supports a common set of options for both the YouTube and Vimeo shortcodes to support displaying your videos with a specific width and correct height. By default, your videos will be displayed using the full width of the content area being used (percent=100). The percent= parameter is used to specify the width you want.</p>
+<p>The height of the video is automatically determined based on the width and the display ratio of the particular video. By default, Aspen S&amp;W will assume a widescreen 9:16 ratio (height is width*0.5625). If you specify 'sd=1', then standard def ratio is assumed (3:4 ratio - height is width*0.75). If you have a custom sized video clip, you may also specify an exact ratio (e.g., 3:9, or ratio=.333). Both Vimeo and YouTube will accept videos with custom ratios, but they must be generated correctly without any letterboxing to display correctly.</p>
+<p>Finally, you may specify if the video should be centered or no within the display area using &quot;center=0&quot; to not center (centering is on by default).</p>
+<p>Note - if you want to display more than one video horizontally, use &quot;center=0&quot; and specify an appropriate percentage to fit all the videos.</p>
+<p>Parameters in Common</p>
+<ul>
+  <li>percent=100 - By default, the video will be sized to fill the full content space. You can use the percent value to make
+  the video use a percentage of the content space (but mobile will always use full width).</li>
+  <li>ratio=0.5625 - By default, Aspen S&amp;W assumes your video will be a standard 9:16 widescreen video. You can get Standard Def videos by using &quot;sd=1&quot; or &quot;ratio=.075&quot;. You can also specify a custom ratio.</li>
+  <li>center=1 - Specify 'center=0' to disable centering of the video.</li>
+  <li>sd=0 - By default, Aspen S&amp;W will generate sizes for HD/widescreen videos. To display old 4:3 standard definition videos, include 'sd=1' in the shortcode.</li>
+  <li>w=640 - By default, the [aspen_vimeo/youtube] shortcode will use the percent value to determine size of the video. A short JavaScript is provided to responsively display videos. You can override the percent and display a fixed size. This is required for proper display in a [aspen_slider], or if you've enabled the FitVids option on the Video tab of the Aspen Shortcodes admin tab.</li>
+</ul>
+<h4>Vimeo</h4>
+<pre><strong>[aspen_vimeo vimeo-url id=videoid sd=0 percent=100 ratio=0.5625 center=1 color=#hex
+   autoplay=0 loop=0 portrait=1 title=1 byline=1]
+</strong></pre>
+<p>This will display Vimeo videos. At the minimum, you can provide the standard http://vimeo.com/nnnnn link, or just the video ID number (which is part of the Vimeo Link). The other Vimeo specific options include:</p>
+<ul>
+  <li>color - You can optionally specify a Vimeo color theme using 6 hex digits for a color value.</li>
+  <li>autoplay - Add 'autoplay=1' to have the video autoplay.</li>
+  <li>loop - Add 'loop=1' to have the video loop.</li>
+  <li>portrait, title, byline - You can specify a value '=0' for these to hide the display of the corresponding element on the Vimeo player.
+  Portrait is the avatar/icon, title is the video title, and byline is source attribution.<br />
+  </li>
+</ul>
+<h4>YouTube</h4>
+<code><strong>[aspen_youtube youtube-url id=videoid sd=0  percent=100 ratio=0.5625 center=1 rel=1 https=0 privacy=0 {youtube options}]
+</strong></code>
+<p>This will display YouTube videos. At the minimum, you can provide the standard http://youtu.be/xxxxxx share link (including the options YouTube lets you specify), the long format share link, or just the video ID number using the id=videoid parameter (which is part of the YouTube Link). The other YouTube specific options include:</p>
+<ul>
+  <li>rel - If you specify 'rel=0', YouTube won't show related videos after the video plays.</li>
+  <li>https - If you specify 'https=1', YouTube will use the https protocol.</li>
+  <li>privacy - If you specify 'privacy=1', YouTube won't used cookies to track your viewing.</li>
+</ul>
+<p>In addition to the above [aspen_youtube] options, the shortcode also supports most standard YouTube options. These are more fully described on the <a href="http://code.google.com/apis/youtube/player_parameters.html" target="_blank">YouTube Embedded Player Parameters</a> page.</p>
+<p>The supported options, with Aspen S&amp;W's default values include:</p>
+<p>'autohide' = '1' . . . . . . 0: always show controls; 1: autohide controls; 2: autohide progress bar<br />
+'autoplay' = '0' . . . . . . 1: auto play; 0: don't<br />
+'border' = '0' . . . . . . . . 0: no border; 1: border using color1 and color2 (don't seem to work)<br />
+'color' = not set . . . . . . progress bar color - red or white<br />
+'color1' = not set . . . . . RGB hex value for border color<br />
+'color2' = not set . . . . . RGB hex value for control bar bg<br />
+'controls' = '1' . . . . . . . 0: hide player controls<br />
+'disablekb' = '0' . . . . . . 1: disable keyboard controls<br />
+'egm' ='0' . . . . . . . . . . . 1: enable &quot;Enhanced Genie Menu&quot;<br />
+'hd' = '0' . . . . . . . . . . . . 1: enable HD playback by default<br />
+'iv_load_policy' = '1' . . . 1: show annotations; 3: don't show; 2: discontinued support<br />
+'loop' = '0' . . . . . . . . . . . 1: loop video<br />
+'modestbranding' = '0' . .1: hide YouTube logo - will still show label in upper right corner<br />
+'origin' = not set . . . . . . . See YouTube docs<br />
+'playlist' = not set . . . . . . Comma separated list of videoIDs to play (id/url video played 1st)<br />
+'showinfo' = '1' . . . . . . . 0: hide video title<br />
+'showsearch' = '1' . . . . . 0: hide video searchbox<br />
+'start' = not set . . . . . . . start vide this number of seconds from start<br />
+'theme' = 'dark' . . . . . . . dark or light - display theme for player<br />
+'wmode' = 'transparent' . Keeps video behind menu bars, etc. Other values available - see YouTube</p>
+<h2><a name="widg-sum" id="widg-sum"></a>Widget Summary</h2>
+<h3><a name="widg-login" id="widg-login"></a>Aspen Login Widget</h3>
+<p>This simple widget shows a login in link, or a welcome, Site Admin, and Log out choice if the user is logged in.</p>
+<h3><a name="widg_pp_text" id="widg_pp_text"></a>Aspen Per Page Text</h3>
+<p>This widget will work like a text widget, but the title and content are defined by custom fields set on a Per Page basis. For any page, define the Custom Field <em>atw_pp_title</em>if you want a title, and define Custom Field<em>atw_pp_text</em> as the content. Content can include arbitrary text, HTML, and shortcodes. The text will not automatically add paragraphs. The widget will display only if the custom fields are defined when that page is displayed. (This widget won't display on the default blog or other archive-like pages.)</p>
+<h3><a name="widg_text_2" id="widg_text_2"></a>Aspen Text 2</h3>
+<p>This widget lets you add two columns of text. It is most useful in wide widget areas such as a content top or bottom widget area, or a wide footer widget area.</p>
+<p>&nbsp;</p>
+<h2><br />
+</h2>
+<p>The Aspen Shortcodes and Widgets Plugin and this document are &copy; 2013, Bruce E. Wampler. <a ref="http://weavertheme.com">Web Site - AspenTheme.com</a></p>
+
+    </div>
+</div>
+</body>
+</html>
